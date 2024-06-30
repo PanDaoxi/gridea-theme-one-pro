@@ -1,0 +1,39 @@
+<div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="<%= themeConfig.domain %>"><%= themeConfig.siteName %></a>
+        </div>
+    </div>
+    <div class="my_socials">
+		<!--
+        <% ['github', 'twitter', 'weibo', 'instagram', 'telegram'].forEach((item)=>{ %>
+            <% if(site.customConfig[item]){ %>
+                <a href="<%= site.customConfig[item] %>" target="_blank"><i class="iconfont icon-<%= item %>"></i></a>
+            <% } %>
+        <% }) %>
+		-->
+		
+		<a title="微信 Wechat" href="<%= themeConfig.domain %>/post-images/1677405467178.jpg" target="_blank"><i class="fa fa-wechat"></i></a>
+		<a title="QQ" href="http://wpa.qq.com/msgrd?v=3&uin=2060642520&site=qq&menu=yes" target="_blank"><i class="fa fa-qq"></i></a>
+		<a title="电子邮件 E-mail" target="_blank" href="mailto:pandaoxi365@gmail.com"><i class="fa fa-envelope"></i></a>
+		<a title="技术博客 Tech Blog" href="/tech-blog/" target="_blank"><i class="fa fa-code"></i></a>
+		<a title="Github 个人主页" href="https://pandaoxi.github.io/" target="_blank"><i class="fa fa-github"></i></a>
+		<a title="订阅 RSS" href="<%= themeConfig.domain %>/atom.xml" target="_blank"><i class="fa fa-rss"></i></a>
+	</div>
+</div>
+<% if(!site.customConfig.footerMenu){ %>
+    <div class="header_menu">
+        <% menus.forEach(function(menu){ %>
+            <% if(menu.openType === 'External' ){ %>
+                <a href="<%= menu.link %>" class="menu" target="_blank"><%= menu.name %></a>
+            <% }else{ %>
+                <a href="<%= menu.link %>" class="menu"><%= menu.name %></a>
+            <% } %>
+        <% }); %>
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="<%= themeConfig.domain %>/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+<% } %>

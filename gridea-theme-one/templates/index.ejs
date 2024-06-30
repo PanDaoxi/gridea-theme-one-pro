@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+        <!-- OG -->
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:title" content="<%= themeConfig.siteName %>" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:description" content="<%= themeConfig.siteDescription %>">
+        <meta property="og:url" content="<%= themeConfig.domain %>" />
+        <meta property="og:site_name" content="<%= themeConfig.siteName %>">
+        <meta property="og:image" content="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>" />
+        <meta property="og:image:secure_url"
+            content="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>">
+        <meta property="og:image:height" content="300" />
+        <meta property="og:image:alt" content="<%= themeConfig.siteName %>">
+        <!-- Twitter (index.ejs) -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="<%= themeConfig.siteName %>">
+        <meta name="twitter:description" content="<%= themeConfig.siteDescription %>">
+        <!-- <meta name="twitter:site" content="@WBoy0609">
+        <meta name="twitter:creator" content="@WBoy0609"> -->
+        <meta name="twitter:image" content="<%= themeConfig.domain %>/images/avatar.png?v=<%= site.utils.now %>">
+</head>
+
+<body>
+	<div class="main animated">
+        <%- include('./includes/header') %>
+            <%- include('./includes/post-list') %>
+    </div>
+    <%- include('./includes/footer') %>
+	
+	<div class="animate__animated animate__lightSpeedInLeft" id="url_msgbox" style="width:150px; position:absolute; top:10px; right:10px; font-size: 5px;">
+		<!-- Hi，欢迎访问此网站😄<br>这是一名中学生的知识仓库，也是个人才华展示的舞台~😎<br>祝你玩得愉快！🤩 -->
+		YOUR MESSAGES HERE.
+	</div>
+	<script>
+		function gc(name){
+			var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+			if(arr = document.cookie.match(reg)){
+				return arr[2];
+			}
+			else{
+				return null;
+			} 
+		}
+		function del_animate_div(){
+			var obj = document.getElementById("url_msgbox");
+			obj.remove();
+		}
+		function cha_animate_div(){
+			var obj = document.getElementById("url_msgbox");
+			obj.setAttribute("class", "animate__animated animate__lightSpeedOutRight");
+		}
+		if(gc("url_msg") == "true") del_animate_div();
+		else{
+			setTimeout("cha_animate_div()", 20000);
+			var d = new Date(9999, 12, 31, 23, 59, 59, 999);
+			document.cookie = "url_msg=true;expires=" + d.toUTCString();
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<script>
+	eval(function(e,f,a,d,c,g){c=function(b){return(b<f?"":c(parseInt(b/f)))+(35<(b%=f)?String.fromCharCode(b+29):b.toString(36))};if(!"".replace(/^/,String)){for(;a--;)g[c(a)]=d[a]||c(a);d=[function(b){return g[b]}];c=function(){return"\\w+"};a=1}for(;a--;)d[a]&&(e=e.replace(new RegExp("\\b"+c(a)+"\\b","g"),d[a]));return e}('P 14{Q({7,k,t,l,5}){4.7=7;4.a={...4.7};4.t=t;4.k=k;4.l=l;4.5=5;4.R=0}H(){4.5.1n=4.t;4.5.1o();4.5.1p(4.a.x,4.a.y,2,0,d.S*2);4.5.1q()}I(){4.a.x=d.1r(4.l)*4.k+4.a.x;4.a.y=d.1s(4.l)*4.k+4.a.y+4.R*0.3;4.R++}}P 15{Q({7,5,J=10,m}){4.7=7;4.5=5;4.J=J;4.m=m;4.T=K;4.n=[]}g(b){h u=b.u;h 16=d.1t(u*d.17());o b[16]}18(){h b=["8","9","A","B","C","D","E","F"];o("#"+4.g(b)+4.g(b)+4.g(b)+4.g(b)+4.g(b)+4.g(b))}U(V,19){o(19-V)*d.17()+V}L(){1u(1v i=0;i<4.J;i++){h f=W 14({5:4.5,7:4.7,t:4.18(),l:4.U(d.S-1,d.S+1),k:4.U(1,6),});4.n.1a(f)}}I(){4.n.X((f,M)=>{N(f.a.x>4.m.v||f.a.y>4.m.w){o 4.n.1b(M,1)}f.I()});N(4.n.u==0){4.T=1c}}H(){4.n.X((f)=>f.H())}}P 1d{Q(){4.z=Y.1e("1f");4.p=Y.1e("1f");4.Z=4.z.1g("1h");4.11=4.p.1g("1h");4.q=O.1w;4.r=O.1x;4.s=[];4.G=K}1i(e){h j=W 15({7:{x:e.1y,y:e.1z},5:4.Z,m:{v:4.q,w:4.r,},});j.L();4.s.1a(j);4.G||4.12()}1j(){4.s=[];4.G=K}L(){h c=4.p.c;c.a="1A";c.1B=c.1C=0;c.1D="1E";c.1F="1G";c.v=4.p.v=4.z.v=4.q;c.w=4.p.w=4.z.w=4.r;Y.1H.1I(4.p);O.1k("1J",4.1i.13(4));O.1k("1K",4.1j.13(4))}12(){4.G=1c;N(4.s.u==0){o(4.G=K)}1L(4.12.13(4));4.Z.1l(0,0,4.q,4.r);4.11.1l(0,0,4.q,4.r);4.s.X((j,M)=>{N(j.T){o 4.s.1b(M,1)}j.I();j.H()});4.11.1M(4.z,0,0,4.q,4.r,)}}h 1m=W 1d();1m.L();',
+	62,111,"    this context  origin   position range style Math  circle randomArray const  boom speed angle area circles return renderCanvas globalWidth globalHeight booms color length width height   computerCanvas       running draw move circleCount false init index if window class constructor renderCount PI stop randomRange start new forEach document computerContext  renderContext run bind Circle Boom randomIndex random randomColor end push splice true CursorSpecialEffects createElement canvas getContext 2d handleMouseDown handlePageHide addEventListener clearRect cursorSpecialEffects fillStyle beginPath arc fill sin cos floor for let innerWidth innerHeight clientX clientY fixed top left zIndex 999999999999999999999999999999999999999999 pointerEvents none body append mousedown pagehide requestAnimationFrame drawImage".split(" "),
+	0,{}));
+</script>
+
+<div class="footer">
+    <% if(site.customConfig.footerMenu){ %>
+        <div class="menu">
+            <% menus.forEach(function(menu){ %>
+                <% if(menu.openType === 'External' ){ %>
+                    <a href="<%= menu.link %>" class="menu" target="_blank"><%= menu.name %></a>
+                <% }else{ %>
+                    <a href="<%= menu.link %>" class="menu"><%= menu.name %></a>
+                <% } %>
+            <% }); %>
+        </div>
+    <% } %>
+    <div class="footer_slogan">
+        <%- themeConfig.siteDescription %>
+    </div>
+	<div id="back_to_top" class="back_to_top">
+        <span><i class="fa fa-angle-up"></i></span>
+    </div>
+    <% if(site.customConfig.busuanzi){ %>
+		<!--
+        <p class="statistic" id="busuanzi_container_site_pv">
+            Traffic statistics: site <span id="busuanzi_value_site_pv"></span> times, page
+            <span id="busuanzi_value_page_pv"></span> times.
+        </p>
+		-->
+    <% } %>
+</div>
+<% if(site.customConfig.busuanzi){ %>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<% } %>
+<script src="<%= themeConfig.domain %>/media/scripts/util.js"></script>
+
+<script>
+console.log("Hi，朋友，你在我的网站里打开了开发者工具！😉\n\n如果你也是一名开发者，欢迎你来参观我的个人 Blog！\n你是来研究我网站的原理的嘛？😎我的网站是基于 Gridea、使用 One 主题（我对它进行了亿些修改，包括但不限于添加 Valine 等各类插件）、托管于 Github 的静态网站！\n\n如果你是一名普通游客，同样欢迎你：你可能发现了新大陆！😁\n如果你想要关掉这个窗口，直接点“×”就好啦！\n\n如果你出于某种目的想盗取我站资源，对不起，我不接受未经同意的转载。抵制侵权，斗争到底。为公为私，为人为己！😠\n如果你真的需要本站资源或与想要我取得联系，请看网页右侧的图标，任选其中一个社交平台与我联系即可！\n\n最后，祝你能玩得愉快！~😊\n\nPanDaoxi\n2024年3月");
+</script>
+<script src="/colorfulbg_bright.min.js"></script>
+<script>
+function hasClass(element, className) {
+  return element.classList.contains(className);
+}
+
+var imgs = document.getElementsByTagName("img");
+for (var i = imgs.length - 1; i >= 0; i--) {
+	if(hasClass(imgs[i], "vemoji")) imgs.pop();
+}
+for (var i = 0; i < imgs.length; i++) {
+	imgs[i].classList.toggle("zoomable");
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.zoomable');
+
+            images.forEach(image => {
+                image.addEventListener('click', (event) => {
+                    event.stopPropagation();
+
+                    image.classList.toggle('zoomed');
+
+                    images.forEach(otherImage => {
+                        if (otherImage !== image) {
+                            otherImage.classList.remove('zoomed');
+                        }
+                    });
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.zoomable')) {
+                    images.forEach(img => {
+                        img.classList.remove('zoomed');
+                    });
+                }
+            });
+        });
+</script>

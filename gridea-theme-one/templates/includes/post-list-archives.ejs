@@ -1,0 +1,38 @@
+<div class="autopagerize_page_element">
+    <div class="content">
+        <% let years = [];posts.forEach((item) => {
+            const year = item.date.substring(0, 4);
+            if (!years.includes(year)) {
+                years.push(year)
+            }
+        }); %>
+        <% years.forEach(function(year){ %>
+            <div class="list_with_title animated fadeInDown">
+                <div class="listing_title">
+                    <%- year %></div>
+                <div class="listing">
+                    <div class="listing-item">
+                        <% posts.forEach(function(post){ %>
+                            <% if(post.date.indexOf(year) !== -1){ %>
+                                <div class="listing_post">
+                                    <a href="<%= post.link %>" title="<%= post.title %>"> <%= post.title %></a>
+                                    <span class="post_time"><%= site.utils.moment(post.date).format("MM.DD") %></span>
+                                </div>
+                            <% } %>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<div class="paginator pager pagination">
+    <div class="paginator_container pagination_container">
+        <% if(pagination.prev){ %>
+            <a href="<%= pagination.prev %>" class="btn pre newer-posts newer_posts"><i class="fa fa-angle-double-left"></i> 上一页</a>
+        <% } %>
+        <% if(pagination.next){ %>
+            <a href="<%= pagination.next %>" class="btn next older-posts older_posts">下一页 <i class="fa fa-angle-double-right"></i></a>
+        <% } %>
+    </div>
+</div>

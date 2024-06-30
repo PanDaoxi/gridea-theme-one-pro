@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="padding-bottom: 20px;"></div>
+<script>
+    var pageId = (location.pathname).substring(1, 49) // Ensure uniqueness and length less than 50
+    pageId = pageId.endsWith('/') ? pageId.slice(0, -1) : pageId // 以斜杠结尾则去除
+    var gitalk = new Gitalk({
+        clientID: '<%= commentSetting.gitalkSetting.clientId %>',
+        clientSecret: '<%= commentSetting.gitalkSetting.clientSecret %>',
+        repo: '<%= commentSetting.gitalkSetting.repository %>',
+        owner: '<%= commentSetting.gitalkSetting.owner %>',
+        admin: ['<%= commentSetting.gitalkSetting.owner %>'],
+        id: pageId,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script>
