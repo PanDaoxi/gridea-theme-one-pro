@@ -2,7 +2,7 @@
 
 一款简洁专注于写作的 Gridea 博客主题，示例网站：<https://daoxi365.gituhb.io>。
 
-修改自[Gridea-theme-one]([kytrun - Codeberg.org](https://codeberg.org/kytrun/gridea-theme-one))。
+修改自 [Gridea-theme-one](https://codeberg.org/kytrun/gridea-theme-one)。
 
 ## `Gridea-theme-One` 的特点
 
